@@ -30,6 +30,7 @@ class Category(models.Model):
 class Post(models.Model):
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    cover = models.ImageField(upload_to='images/')
     title = models.CharField(max_length=200,unique=True,default='ใส่ชื่อบทความ')
     content = models.TextField(default='ใส่เนื้อหาบทความ')
     created_date = models.DateTimeField(default=timezone.now)
