@@ -27,6 +27,13 @@ class Category(models.Model):
             k = k.parent
         return ' -> '.join(full_path[::-1])
 
+class Websitedetail(models.Model):
+    websitename = models.CharField(max_length=200,unique=True,default='ชื่อเว็บไซต์')
+    websitedetail = models.CharField(max_length=400,unique=True,default='รายละเอียดเว็บไซต์')
+
+    def __str__(self):
+        return self.websitename
+
 class Post(models.Model):
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

@@ -10,11 +10,11 @@
     <div class="card-body d-flex flex-column align-items-start">
       <strong class="d-inline-block mb-2 text-primary"> {{post.category}}</strong>
       <h3 class="mb-0">
-        <a class="text-dark" href="#">{{ post.title|slice:"200" }}</a>
+        <a class="text-dark" href="{% url 'post_detail' post.slug %}"> {{ post.title|slice:"200" }}</a>
       </h3>
 
       <p class="card-text mb-auto" style="margin-top: 10px;">{{ post.content|slice:"50" }}</p>
-      <a href="#">อ่านบทความนี้ต่อ</a>
+      <a href="{% url 'post_detail' post.slug %}">อ่านบทความนี้ต่อ</a>
     </div>
 
     <img class="card-img-right flex-auto d-none d-md-block" src="{{ post.cover.url }}" width="200px" height="250px" alt="{{ post.title }}">
