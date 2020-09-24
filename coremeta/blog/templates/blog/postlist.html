@@ -17,7 +17,7 @@
       <a href="{% url 'post_detail' post.slug %}">อ่านบทความนี้ต่อ</a>
     </div>
 
-    <img class="card-img-right flex-auto d-none d-md-block" src="{{ post.cover.url }}" width="200px" height="250px" alt="{{ post.title }}">
+    <img loading="lazy" class="card-img-right flex-auto d-none d-md-block" src="{{ post.cover.url }}" width="200px" height="250px" alt="{{ post.title }}">
   </div>
 
 </div>
